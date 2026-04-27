@@ -1,4 +1,5 @@
-var data =[];
+
+  var data =[];
   var danhSachPhieuPhuHienTai = [];
   var danhSachPhieuPhuMoi = []; //danh sách các mẫu chính là nằm trong danh sách các phiếu phụ
 
@@ -127,8 +128,8 @@ var data =[];
   {
     constructor(constructorData={})
     {
-      this.id = constructor.id || '';
-      this.kyHieuDoiTuong = constructor.kyHieuDoiTuong || '';
+      this.id = constructorData.id || '';
+      this.kyHieuDoiTuong = constructorData.kyHieuDoiTuong || '';
 
       this.ten = constructorData.ten || '';
       this.phuongPhapThu = constructorData.phuongPhapThu || '';
@@ -144,13 +145,13 @@ var data =[];
       return `<div class="chiTietPhieu__danhSachChiTieu__dong" style="padding:var(--padding-md);background:var(--surface);">
                   <div>${stt}</div>
                   <div>
-                    ${response[j]}
+                    ${this.ten}
                   </div>
                   <div>
-                    ${response[j +1]}
+                    ${this.phuongPhapThu}
                   </div>
                   <div>
-                    ${formatNumber(response[j+5] + "000")}
+                    ${formatNumber(this.phiThuNghiem + "000")}
                   </div>
                 </div>`;
     }
@@ -246,7 +247,7 @@ var data =[];
         {
           document.getElementById('chiTietPhieu_chiTietDoiTuongChiTieu_danhSachChiTieu').innerHTML = '';
           document.getElementById('editPhieu_editChiTieu_danhSachChiTieu').innerHTML = '';
-          
+          tongSoTien1MauHienTai = 0;
           for (let j = 0; j<response.length; j=j+6)
           {
             if (response[j] !== "")
@@ -294,16 +295,19 @@ var data =[];
           if (doiTuongMoi)
           {
             document.getElementById('editPhieu_editChiTieu_danhSachChiTieu').innerHTML = '';
+            let html = '';
             for (let k=0; k <danhMucChiTieu.length; k++)
             {
               if (danhMucChiTieu[k].kyHieuDoiTuong == kyHieuDoiTuong)
               {
-                document.getElementById('editPhieu_editChiTieu_danhSachChiTieu').innerHTML += danhMucChiTieu[k].renderForEditChiTieu("", stt);
+                html += danhMucChiTieu[k].renderForEditChiTieu("", stt);
               }
             }
+            document.getElementById('editPhieu_editChiTieu_danhSachChiTieu').innerHTML = html;
           }
           else
           {
+            let html = '';
             for (let k=0; k <danhMucChiTieu.length; k++)
             {
               if (danhMucChiTieu[k].kyHieuDoiTuong == kyHieuDoiTuong)
@@ -311,14 +315,15 @@ var data =[];
                 if (danhSachChiTieuMoi.includes(danhMucChiTieu[k])) {} // Nếu đã nằm trong danh sách chỉ tiêu của phiếu rồi thì thôi
                 else
                 {
-                  document.getElementById('editPhieu_editChiTieu_danhSachChiTieu').innerHTML += danhMucChiTieu[k].renderForEditChiTieu("", stt);
+                  html += danhMucChiTieu[k].renderForEditChiTieu("", stt);
                 }                  
               }
             }
+            document.getElementById('editPhieu_editChiTieu_danhSachChiTieu').innerHTML += html;
           }
             
           //Cập nhật danh sách chọn gần đây:
-          document.getElementById('editPhieu_editChiTieu_danhSachChiTieuGanDay').innderHTML = `<option value="-1">-</option>`;
+          document.getElementById('editPhieu_editChiTieu_danhSachChiTieuGanDay').innerHTML = `<option value="-1">-</option>`;
 
           for (let k=0; k< danhSachDoiTuong.length; k ++)
           {
