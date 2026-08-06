@@ -1,0 +1,137 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1280"
+    height="128"
+    viewBox="0 0 1280 128"
+>
+
+    <rect
+        x="0"
+        y="0"
+        width="100%"
+        height="100%"
+        fill="#F7F9FC"
+    />
+
+    <!-- HẠT 1 -->
+    <g>
+        <circle
+            cx="-10"
+            cy="-10"
+            r="4"
+            fill="#32A2E3"
+        />
+
+        <animateTransform
+            attributeName="transform"
+            type="translate"
+            begin="3s"
+            dur="24s"
+            values="30 50; 630 20; 830 60; 980 10; 1330 70"
+            repeatCount="indefinite"
+        />
+    </g>
+
+
+    <!-- HẠT 2 -->
+    <g>
+        <circle
+            cx="-10"
+            cy="-10"
+            r="10"
+            fill="#B1E6FF"
+        />
+
+        <animateTransform
+            attributeName="transform"
+            type="translate"
+            begin="0s"
+            dur="12s"
+            values="30 10; 330 40; 630 20; 1330 50"
+            repeatCount="indefinite"
+        />
+    </g>
+
+
+    <!-- HẠT 3 -->
+    <g>
+        <circle
+            cx="-10"
+            cy="-10"
+            r="6"
+            fill="#32A2E3"
+        />
+
+        <animateTransform
+            attributeName="transform"
+            type="translate"
+            begin="0s"
+            dur="11s"
+            values="220 10; 400 20; 700 10; 950 20"
+            repeatCount="indefinite"
+        />
+    </g>
+
+
+    <!-- HẠT 4 -->
+    <g>
+        <circle
+            cx="-10"
+            cy="-10"
+            r="4"
+            fill="#B1E6FF"
+            opacity="0.8"
+        />
+
+        <animateTransform
+            attributeName="transform"
+            type="translate"
+            begin="0s"
+            dur="36s"
+            values="1280 10; 800 100; 300 20; -10 0"
+            repeatCount="indefinite"
+        />
+    </g>
+
+
+    <!-- HẠT 5 -->
+    <g>
+        <circle
+            cx="-10"
+            cy="-10"
+            r="3"
+            fill="#32A2E3"
+            opacity="0.9"
+        />
+
+        <animateTransform
+            attributeName="transform"
+            type="translate"
+            begin="0s"
+            dur="15s"
+            values="110 10; 320 20; 640 10; -50 20"
+            repeatCount="indefinite"
+        />
+    </g>
+
+
+    <!-- HẠT 6 -->
+    <g>
+        <circle
+            cx="-10"
+            cy="-10"
+            r="8"
+            fill="#B1E6FF"
+        />
+
+        <animateTransform
+            attributeName="transform"
+            type="translate"
+            begin="0s"
+            dur="18s"
+            values="530 10; 830 60; 930 40; 1330 50"
+            repeatCount="indefinite"
+        />
+    </g>
+
+</svg>
